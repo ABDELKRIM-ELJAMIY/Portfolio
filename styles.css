@@ -3,7 +3,8 @@
     margin: 0;
     box-sizing: border-box;
 }
-header{
+
+header {
     padding: 1rem 5%;
     margin-top: 0px;
     display: flex;
@@ -12,20 +13,22 @@ header{
     align-items: center;
     height: 100px;
     width: 100%;
-   box-shadow: 0 13px 10px rgba(100, 100, 100, 0.5);
-    position: absolute;
-     top: 0;
+    box-shadow: 0 13px 10px rgba(100, 100, 100, 0.5);
+    position: fixed;
+    top: 0;
     left: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
-body{
+
+body {
     background-color: black;
     margin: 0;
     padding: 0;
-    position:flex;
+    position: flex;
     overflow-x: hidden;
-    overflow-y: auto ;
+    overflow-y: auto;
 }
+
 /*button ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 .button-container {
     display: flex;
@@ -57,17 +60,33 @@ button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5);
 }
+
 button:disabled {
     background-color: #d6d6d6;
     border-color: #b0b0b0;
     cursor: not-allowed;
 }
+
+.scrollBtn.active {
+    border: 2px dashed transparent;
+    box-shadow: 0 0 222px rgb(0, 72, 255), 0 0 100px rgb(55, 0, 255);
+    transform: rotate(0deg);
+    background-color: #c82333;
+}
+
 /* image profile:::::::::::::::::::::::::::::::::::::::::::::: */
+#about {
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
+
 .circle-image-container {
     position: relative;
     top: 300px;
     left: 150px;
-}.circle-image {
+}
+
+.circle-image {
     width: 600px;
     height: 600px;
     border-radius: 50%;
@@ -76,10 +95,13 @@ button:disabled {
     border: 3px solid #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .circle-image:hover {
+    transition: transform 0.3s ease-in-out;
     transform: scale(1.05);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
+
 /* phrase::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 .hi {
     margin: 0;
@@ -91,59 +113,74 @@ button:disabled {
     position: relative;
     left: 800px;
 }
+
 .hi strong {
     font-size: 85px;
     color: #0080ff93;
 }
-.hi strong:hover{
+
+.hi strong:hover {
     font-size: 90px;
-        color: #0080ff;
-transition: all 0.3s ease-in-out;
+    color: #0080ff;
+    transition: all 0.3s ease-in-out;
     transform: scale(1.1);
 }
-.hi p{
+
+.hi p {
     font-size: 50px;
-        color: #ffffff8f;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}.social-buttons a {
+    color: #ffffff8f;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.social-buttons a {
     margin: 10px;
     transition: all 0.3s ease;
 }
+
 .social-buttons a:hover {
-    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+        transform: scale(1.05);
 }
+
 .social-buttons .btn-primary:hover {
     background-color: #0056b3;
 }
+
 .social-buttons .btn-danger:hover {
     background-color: #c82333;
 }
+
 .social-buttons .btn-success:hover {
     background-color: #218838;
-}#about {
+}
+
+#about {
     padding-top: 200px;
-    background-color: #f1f3f5;
-    margin-top: 200px;
-    padding-bottom: 50px;
+    background-color: #ffffff00;
+    margin-top: 300px;
     border-radius: 10px;
     box-shadow: inset;
+    /* margin-bottom: 30%; */
 }
 
 #about h2 {
     font-weight: bold;
-    color: #0080ff;
+    color: #ffffff;
     font-size: 2.5rem;
 }
+
 #about p {
     font-size: 1.2rem;
-    color: #6c757d;
+    color: #ffffff75;
     line-height: 1.6;
 }
+
 #about .lead {
     font-size: 1.5rem;
     font-weight: 500;
-    color: #495057;
+    color: #ffffffbb;
 }
+
 .title {
     display: flex;
     justify-content: center;
@@ -167,25 +204,21 @@ transition: all 0.3s ease-in-out;
 }
 
 .title :hover {
-
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05);
+    /* transition: cubic-bezier(0.075, 0.82, 0.165, 1); */
     background-color: #ffffff;
     transform: scale(1.05);
     color: black;
     border: 1px rgb(0, 0, 0) solid;
 }
-.formations {
-    display: flex;
-    gap: 900px;
-    justify-content: center;
 
-}
 .cards-experience {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 50px;
-    margin-top:50px;
+    margin-top: 30px;
 }
 
 .card-experience {
@@ -200,7 +233,6 @@ transition: all 0.3s ease-in-out;
     text-align: left;
     height: 750px;
 }
-
 .card-experience img {
     width: 100%;
     border-radius: 8px;
@@ -226,8 +258,33 @@ transition: all 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     transform: scale(1.05);
 }
+
+figure {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    width: 300px;
+    background-color: #f9f9f900;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6e6868;
+    font-style: italic;
+}
+
 .projet {
-    margin-top: 100px;
     display: flex;
     justify-content: space-around;
     gap: 20px;
@@ -242,6 +299,12 @@ transition: all 0.3s ease-in-out;
     text-align: center;
     color: #ffffff;
 }
+.card-projet:hover{
+    transition: transform 0.3s ease-in-out;
+        transform: scale(1.05);
+}
+
+
 
 .card-img-top {
     width: 100%;
@@ -255,7 +318,7 @@ transition: all 0.3s ease-in-out;
 /* File: styles.css */
 .skills-section {
     text-align: center;
-    background-color: #f0f0f0d2;
+    background-color: #ffffff00;
     padding: 20px;
     border: 1px solid #000;
     width: 90%;
@@ -264,11 +327,12 @@ transition: all 0.3s ease-in-out;
     margin-top: 200px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
+
 }
+
 .skills-section h2 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 20%;
     color: #333;
 }
 
@@ -277,10 +341,12 @@ transition: all 0.3s ease-in-out;
     justify-content: center;
     flex-wrap: wrap;
     gap: 70px;
+    background-color: #ffffff00;
 }
 
 .skills-logos figure {
     text-align: center;
+    background-color: #ffffff00;
 }
 
 .skills-logos img {
@@ -291,10 +357,28 @@ transition: all 0.3s ease-in-out;
 
 .skills-logos figcaption {
     margin-top: 8px;
-    font-size: 14px;
-    color: #555;
+    font-size: 24px;
+    color: #ffffff;
 }
 
 .skills-logos img:hover {
     transform: scale(1.1);
+}
+.skills:hover{
+    transition: transform 0.3s ease-in-out;
+        transform: scale(1.05);
+}
+
+.test {
+    margin-top: 40%;
+    margin-bottom: 10%;
+    height: 500px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 30px;
+}
+
+#Contact {
+    height: 500px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 30px;
 }
